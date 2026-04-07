@@ -6,151 +6,158 @@
   <title>Fabio Dias Personal | Protocolo 40tando — Seque a Barriga e Ganhe Músculo depois dos 35</title>
   <meta name="description" content="Método exclusivo para pessoas 35+ secarem a barriga e ganharem músculo. +1000 alunos transformados em Santo André, SP. Fale agora com Fabio Dias Personal." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================================
-       RESET & BASE
-    ============================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold:    #D4AF37;
+      --gold: #D4AF37;
       --gold-lt: #F0D060;
-      --black:   #0a0a0a;
-      --dark:    #111111;
-      --dark2:   #1a1a1a;
-      --dark3:   #222222;
-      --white:   #ffffff;
-      --gray:    #888888;
-      --gray-lt: #cccccc;
-      --wa:      #25D366;
-      --radius:  12px;
-      --shadow:  0 4px 32px rgba(0,0,0,.45);
+      --gold-dk: #8B6914;
+      --black: #060606;
+      --dark: #0c0c0c;
+      --dark2: #121212;
+      --dark3: #181818;
+      --dark4: #1e1e1e;
+      --white: #f5f0e8;
+      --gray: #6a6a6a;
+      --gray-lt: #b5b0a5;
+      --wa: #25D366;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 40px rgba(0,0,0,.6);
+      --glow: 0 0 60px rgba(212,175,55,.15);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
       background: var(--black);
       color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      opacity: .4;
     }
 
     img { max-width: 100%; display: block; }
-
     a { color: inherit; text-decoration: none; }
 
-    /* ============================================
-       UTILITIES
-    ============================================ */
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-    .gold   { color: var(--gold); }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .gold { color: var(--gold); }
     .center { text-align: center; }
 
-    .section { padding: 80px 0; }
+    .section { padding: 100px 0; position: relative; }
     .section-dark  { background: var(--dark); }
     .section-dark2 { background: var(--dark2); }
     .section-dark3 { background: var(--dark3); }
 
-    .section-title {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.2;
+    .section-label {
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
       margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .5;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -.01em;
     }
     .section-sub {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--gray-lt);
-      max-width: 640px;
-      margin: 0 auto 48px;
+      max-width: 580px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
+      font-weight: 300;
     }
     .divider {
-      width: 60px; height: 4px;
-      background: var(--gold);
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt));
       border-radius: 2px;
-      margin: 16px auto 32px;
+      margin: 20px auto 32px;
     }
 
-    /* ============================================
-       FADE-IN ANIMATIONS
-    ============================================ */
     .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(36px);
+      transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .fade-in-delay-1 { transition-delay: .1s; }
-    .fade-in-delay-2 { transition-delay: .2s; }
-    .fade-in-delay-3 { transition-delay: .3s; }
-    .fade-in-delay-4 { transition-delay: .4s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in-delay-1 { transition-delay: .12s; }
+    .fade-in-delay-2 { transition-delay: .24s; }
+    .fade-in-delay-3 { transition-delay: .36s; }
+    .fade-in-delay-4 { transition-delay: .48s; }
 
-    /* ============================================
-       BUTTONS
-    ============================================ */
     .btn-wa {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: var(--wa);
       color: #fff;
-      font-size: 1rem;
+      font-family: var(--font-body);
+      font-size: .95rem;
       font-weight: 700;
-      padding: 16px 32px;
-      border-radius: 50px;
+      padding: 16px 36px;
+      border-radius: 60px;
       cursor: pointer;
       border: none;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s, background .2s;
-      box-shadow: 0 6px 28px rgba(37,211,102,.35);
+      transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .3s;
+      box-shadow: 0 6px 32px rgba(37,211,102,.3), inset 0 1px 0 rgba(255,255,255,.15);
       white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-wa::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, transparent 50%);
+      pointer-events: none;
     }
     .btn-wa:hover {
-      background: #1ebe5d;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 36px rgba(37,211,102,.5);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 44px rgba(37,211,102,.45), inset 0 1px 0 rgba(255,255,255,.15);
     }
-    .btn-wa-lg {
-      font-size: 1.15rem;
-      padding: 20px 44px;
-    }
-    .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--gold);
-      color: var(--black);
-      font-size: 1rem;
-      font-weight: 800;
-      padding: 16px 32px;
-      border-radius: 50px;
-      cursor: pointer;
-      border: none;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 6px 28px rgba(212,175,55,.35);
-    }
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 36px rgba(212,175,55,.55);
-    }
+    .btn-wa:active { transform: translateY(0) scale(.98); }
+    .btn-wa-lg { font-size: 1.05rem; padding: 20px 48px; }
 
-    /* ============================================
-       FLOATING WHATSAPP BUTTON
-    ============================================ */
     .wa-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 9999;
-      width: 60px; height: 60px;
+      bottom: 24px; right: 24px;
+      z-index: 9997;
+      width: 62px; height: 62px;
       background: var(--wa);
       border-radius: 50%;
       display: flex;
@@ -158,318 +165,280 @@
       justify-content: center;
       font-size: 1.7rem;
       color: #fff;
-      box-shadow: 0 6px 24px rgba(37,211,102,.5);
-      animation: pulse-wa 2.5s infinite;
-      transition: transform .2s;
+      box-shadow: 0 6px 28px rgba(37,211,102,.45);
+      animation: pulse-wa 3s ease-in-out infinite;
+      transition: transform .25s;
     }
-    .wa-float:hover { transform: scale(1.12); }
+    .wa-float:hover { transform: scale(1.15); }
     @keyframes pulse-wa {
-      0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.5); }
-      50%      { box-shadow: 0 6px 40px rgba(37,211,102,.8); }
+      0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,.45); }
+      50% { box-shadow: 0 6px 48px rgba(37,211,102,.7); }
     }
 
-    /* ============================================
-       TOPBAR
-    ============================================ */
     .topbar {
-      background: var(--gold);
+      background: linear-gradient(90deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-dk) 100%);
       color: var(--black);
       text-align: center;
-      font-size: .85rem;
+      font-size: .8rem;
       font-weight: 700;
       padding: 10px 20px;
-      letter-spacing: .03em;
+      letter-spacing: .04em;
     }
-    .topbar a { color: var(--black); text-decoration: underline; }
+    .topbar a { color: var(--black); text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ============================================
-       NAVBAR
-    ============================================ */
     nav {
-      background: rgba(10,10,10,.96);
-      backdrop-filter: blur(12px);
+      background: rgba(6,6,6,.85);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
       position: sticky;
       top: 0;
       z-index: 999;
-      border-bottom: 1px solid rgba(212,175,55,.15);
-      padding: 14px 0;
+      border-bottom: 1px solid rgba(212,175,55,.1);
+      padding: 16px 0;
+      transition: box-shadow .3s;
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: .02em;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; letter-spacing: .02em; }
     .nav-logo span { color: var(--gold); }
 
-    /* ============================================
-       HERO SECTION
-    ============================================ */
     .hero {
-      background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0f0f0f 100%);
-      padding: 72px 0 80px;
+      background: var(--black);
+      padding: 80px 0 100px;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px; right: -120px;
+      top: -200px; right: -150px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(212,175,55,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212,175,55,.05) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
       align-items: center;
     }
     @media(max-width:768px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-img-wrap { order: -1; }
     }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212,175,55,.12);
-      border: 1px solid rgba(212,175,55,.3);
+      background: rgba(212,175,55,.08);
+      border: 1px solid rgba(212,175,55,.2);
       color: var(--gold);
-      font-size: .8rem;
+      font-size: .72rem;
       font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 50px;
-      margin-bottom: 24px;
-      letter-spacing: .05em;
+      padding: 8px 18px;
+      border-radius: 60px;
+      margin-bottom: 28px;
+      letter-spacing: .1em;
       text-transform: uppercase;
+      backdrop-filter: blur(8px);
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 24px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 .gold {
+      background: linear-gradient(135deg, var(--gold) 20%, var(--gold-lt) 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--gray-lt);
-      margin-bottom: 32px;
-      line-height: 1.7;
+      margin-bottom: 36px;
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 520px;
     }
+    @media(max-width:768px) { .hero-sub { margin-left: auto; margin-right: auto; } }
     .hero-social-proof {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-top: 28px;
+      margin-top: 32px;
       flex-wrap: wrap;
     }
     @media(max-width:768px){ .hero-social-proof { justify-content: center; } }
-    .proof-stars { color: var(--gold); font-size: 1rem; }
-    .proof-text { font-size: .9rem; color: var(--gray-lt); }
-    .proof-text strong { color: var(--white); }
+    .proof-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+    .proof-text { font-size: .88rem; color: var(--gray-lt); font-weight: 300; }
+    .proof-text strong { color: var(--white); font-weight: 700; }
 
-    .hero-img-wrap {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
+    .hero-img-wrap { position: relative; display: flex; justify-content: center; }
     .hero-img-ring {
-      width: 320px; height: 320px;
+      width: 340px; height: 340px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold) 0%, #8B6914 100%);
+      background: linear-gradient(160deg, var(--gold) 0%, var(--gold-dk) 60%, rgba(212,175,55,.3) 100%);
       padding: 4px;
       position: relative;
+      box-shadow: 0 0 80px rgba(212,175,55,.2), 0 0 160px rgba(212,175,55,.06);
     }
-    @media(max-width:480px){ .hero-img-ring { width: 240px; height: 240px; } }
-    .hero-img-inner {
-      width: 100%; height: 100%;
+    @media(max-width:480px){ .hero-img-ring { width: 260px; height: 260px; } }
+    .hero-img-ring::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
       border-radius: 50%;
-      overflow: hidden;
-      background: var(--dark2);
+      border: 1px dashed rgba(212,175,55,.2);
+      animation: spin 25s linear infinite;
     }
-    .hero-img-inner img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-img-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: var(--dark2); }
+    .hero-img-inner img { width: 100%; height: 100%; object-fit: cover; }
     .hero-badge-float {
       position: absolute;
-      bottom: 8px; right: -8px;
-      background: var(--gold);
+      bottom: 12px; right: -4px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lt) 100%);
       color: var(--black);
-      font-size: .8rem;
+      font-size: .78rem;
       font-weight: 800;
-      padding: 8px 16px;
-      border-radius: 50px;
+      padding: 10px 20px;
+      border-radius: 60px;
       white-space: nowrap;
-      box-shadow: var(--shadow);
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
     }
 
-    /* ============================================
-       LOGOS / SOCIAL PROOF BAR
-    ============================================ */
     .proof-bar {
       background: var(--dark2);
-      border-top: 1px solid rgba(212,175,55,.1);
-      border-bottom: 1px solid rgba(212,175,55,.1);
-      padding: 28px 0;
+      border-top: 1px solid rgba(212,175,55,.08);
+      border-bottom: 1px solid rgba(212,175,55,.08);
+      padding: 32px 0;
+      position: relative;
     }
-    .proof-bar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+    .proof-bar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,.03) 50%, transparent 100%);
+      pointer-events: none;
     }
-    .proof-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .9rem;
-      font-weight: 600;
-      color: var(--gray-lt);
-    }
-    .proof-item i { color: var(--gold); font-size: 1.3rem; }
+    .proof-bar-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .proof-item { display: flex; align-items: center; gap: 12px; font-size: .88rem; font-weight: 500; color: var(--gray-lt); }
+    .proof-item i { color: var(--gold); font-size: 1.2rem; opacity: .8; }
 
-    /* ============================================
-       DOR SECTION
-    ============================================ */
-    .dor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
+    .dor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 56px; }
     .dor-card {
-      background: var(--dark3);
-      border: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(145deg, var(--dark3) 0%, var(--dark4) 100%);
+      border: 1px solid rgba(255,255,255,.04);
       border-radius: var(--radius);
-      padding: 28px 24px;
+      padding: 32px 28px;
       position: relative;
       overflow: hidden;
+      transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .4s;
     }
+    .dor-card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,.15); }
     .dor-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--gold);
+      width: 3px; height: 100%;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      opacity: .6;
     }
-    .dor-card .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .dor-card::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -50%;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle, rgba(212,175,55,.04) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .dor-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .dor-card p {
-      font-size: .9rem;
-      color: var(--gray-lt);
-      line-height: 1.6;
-    }
-    .dor-cta { text-align: center; margin-top: 48px; }
+    .dor-card .icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+    .dor-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .dor-card p { font-size: .88rem; color: var(--gray-lt); line-height: 1.7; font-weight: 300; }
+    .dor-cta { text-align: center; margin-top: 56px; }
 
-    /* ============================================
-       MÉTODO SECTION
-    ============================================ */
-    .metodo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
+    .metodo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 56px; }
     .metodo-card {
       background: var(--dark3);
-      border: 1px solid rgba(212,175,55,.15);
+      border: 1px solid rgba(212,175,55,.08);
       border-radius: var(--radius);
-      padding: 32px 24px;
+      padding: 36px 28px;
       text-align: center;
-      transition: border-color .3s, transform .3s;
+      transition: border-color .4s, transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+      position: relative;
+      overflow: hidden;
     }
-    .metodo-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
+    .metodo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(212,175,55,.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
     }
+    .metodo-card:hover { border-color: rgba(212,175,55,.3); transform: translateY(-6px); box-shadow: var(--glow); }
+    .metodo-card:hover::before { opacity: 1; }
     .metodo-card .num {
-      width: 52px; height: 52px;
-      background: var(--gold);
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dk) 100%);
       color: var(--black);
-      font-size: 1.3rem;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
       font-weight: 900;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 16px;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 24px rgba(212,175,55,.3);
     }
-    .metodo-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .metodo-card p {
-      font-size: .9rem;
-      color: var(--gray-lt);
-      line-height: 1.6;
-    }
-    .metodo-diff {
-      background: rgba(212,175,55,.06);
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-top: 48px;
-    }
-    .metodo-diff h3 {
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .diff-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-    }
-    .diff-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: .95rem;
-      color: var(--gray-lt);
-    }
-    .diff-list li i { color: var(--gold); margin-top: 3px; flex-shrink: 0; }
+    .metodo-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .metodo-card p { font-size: .88rem; color: var(--gray-lt); line-height: 1.7; font-weight: 300; }
 
-    /* ============================================
-       RESULTADOS SECTION
-    ============================================ */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-      margin-top: 48px;
+    .metodo-diff {
+      background: rgba(212,175,55,.04);
+      border: 1px solid rgba(212,175,55,.12);
+      border-radius: var(--radius);
+      padding: 36px;
+      margin-top: 56px;
+      position: relative;
+      overflow: hidden;
     }
+    .metodo-diff::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: .3;
+    }
+    .metodo-diff h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+    .diff-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .diff-list li { display: flex; align-items: flex-start; gap: 12px; font-size: .92rem; color: var(--gray-lt); font-weight: 300; }
+    .diff-list li i { color: var(--gold); margin-top: 4px; flex-shrink: 0; font-size: .85rem; }
+
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 56px; }
     .result-card {
       background: var(--dark3);
-      border: 1px solid rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.05);
       border-radius: var(--radius);
       overflow: hidden;
-      transition: transform .3s, border-color .3s;
+      transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .4s, box-shadow .4s;
     }
-    .result-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212,175,55,.3);
-    }
-    .result-photos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    .result-card:hover { transform: translateY(-5px); border-color: rgba(212,175,55,.2); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .result-photos { display: grid; grid-template-columns: 1fr 1fr; }
     .photo-placeholder {
       aspect-ratio: 3/4;
       display: flex;
@@ -477,248 +446,146 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .05em;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .photo-placeholder.antes {
-      background: #1c1c1c;
-      color: #555;
-      border-right: 1px solid #2a2a2a;
-    }
-    .photo-placeholder.depois {
-      background: #1f1e15;
-      color: var(--gold);
-    }
-    .photo-placeholder i { font-size: 2rem; margin-bottom: 4px; }
+    .photo-placeholder.antes { background: linear-gradient(145deg, #141414, #1a1a1a); color: #444; border-right: 1px solid #1f1f1f; }
+    .photo-placeholder.depois { background: linear-gradient(145deg, #1a1810, #1f1d14); color: var(--gold); }
+    .photo-placeholder i { font-size: 2rem; margin-bottom: 6px; opacity: .6; }
+    .result-body { padding: 24px; }
+    .result-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+    .result-meta { font-size: .78rem; color: var(--gold); font-weight: 600; margin-bottom: 14px; letter-spacing: .02em; }
+    .result-quote { font-size: .88rem; color: var(--gray-lt); font-style: italic; line-height: 1.7; border-left: 2px solid var(--gold); padding-left: 14px; font-weight: 300; }
 
-    .result-body { padding: 20px; }
-    .result-name {
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-    .result-meta {
-      font-size: .8rem;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .result-quote {
-      font-size: .88rem;
-      color: var(--gray-lt);
-      font-style: italic;
-      line-height: 1.6;
-      border-left: 3px solid var(--gold);
-      padding-left: 12px;
-    }
-
-    /* ============================================
-       SOBRE SECTION
-    ============================================ */
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 56px;
-      align-items: center;
-    }
+    .sobre-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: center; }
     @media(max-width:768px){
       .sobre-grid { grid-template-columns: 1fr; text-align: center; }
       .sobre-img-wrap { display: flex; justify-content: center; }
     }
     .sobre-img {
-      width: 280px; height: 280px;
+      width: 300px; height: 300px;
       border-radius: var(--radius);
       overflow: hidden;
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 40px rgba(212,175,55,.25);
+      border: 2px solid rgba(212,175,55,.4);
+      box-shadow: 0 0 60px rgba(212,175,55,.15), 0 20px 60px rgba(0,0,0,.5);
+      position: relative;
+    }
+    .sobre-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(6,6,6,.4) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
     .sobre-img img { width: 100%; height: 100%; object-fit: cover; }
-    .sobre-content h2 {
-      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-      font-weight: 900;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    .sobre-content p {
-      color: var(--gray-lt);
-      margin-bottom: 16px;
-      font-size: .97rem;
-      line-height: 1.7;
-    }
-    .sobre-stats {
-      display: flex;
-      gap: 24px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
+    .sobre-content h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 24px; line-height: 1.15; }
+    .sobre-content p { color: var(--gray-lt); margin-bottom: 18px; font-size: .95rem; line-height: 1.75; font-weight: 300; }
+    .sobre-stats { display: flex; gap: 28px; margin-top: 32px; flex-wrap: wrap; }
     @media(max-width:768px){ .sobre-stats { justify-content: center; } }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
+    .stat-item {
+      text-align: center;
+      padding: 16px 20px;
+      background: rgba(212,175,55,.04);
+      border: 1px solid rgba(212,175,55,.1);
+      border-radius: var(--radius-sm);
     }
-    .stat-label { font-size: .78rem; color: var(--gray); margin-top: 4px; }
+    .stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: .72rem; color: var(--gray); margin-top: 6px; letter-spacing: .05em; text-transform: uppercase; font-weight: 500; }
 
-    /* ============================================
-       PARA QUEM É / NÃO É
-    ============================================ */
-    .pq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 48px;
-    }
+    .pq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
     @media(max-width:640px){ .pq-grid { grid-template-columns: 1fr; } }
-
-    .pq-card {
-      border-radius: var(--radius);
-      padding: 32px 28px;
-    }
-    .pq-card.sim {
-      background: rgba(37,211,102,.06);
-      border: 1px solid rgba(37,211,102,.2);
-    }
-    .pq-card.nao {
-      background: rgba(220,53,69,.06);
-      border: 1px solid rgba(220,53,69,.2);
-    }
-    .pq-card h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .pq-card { border-radius: var(--radius); padding: 36px 32px; }
+    .pq-card.sim { background: rgba(37,211,102,.04); border: 1px solid rgba(37,211,102,.15); }
+    .pq-card.nao { background: rgba(220,53,69,.04); border: 1px solid rgba(220,53,69,.15); }
+    .pq-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
     .pq-card.sim h3 { color: #25D366; }
     .pq-card.nao h3 { color: #dc3545; }
     .pq-list { list-style: none; }
-    .pq-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: .92rem;
-      color: var(--gray-lt);
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-    .pq-list li i { margin-top: 2px; flex-shrink: 0; }
+    .pq-list li { display: flex; align-items: flex-start; gap: 12px; font-size: .9rem; color: var(--gray-lt); margin-bottom: 14px; line-height: 1.55; font-weight: 300; }
+    .pq-list li i { margin-top: 3px; flex-shrink: 0; font-size: .8rem; }
     .pq-card.sim .pq-list li i { color: #25D366; }
     .pq-card.nao .pq-list li i { color: #dc3545; }
 
-    /* ============================================
-       COMO FUNCIONA
-    ============================================ */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
-      position: relative;
-    }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; position: relative; }
     @media(max-width:640px){ .steps-grid { grid-template-columns: 1fr; } }
-
     .steps-grid::before {
       content: '';
       position: absolute;
-      top: 40px; left: calc(16.66% + 12px); right: calc(16.66% + 12px);
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+      top: 44px; left: calc(16.66% + 16px); right: calc(16.66% + 16px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
       z-index: 0;
+      opacity: .4;
     }
     @media(max-width:640px){ .steps-grid::before { display: none; } }
-
-    .step {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+    .step { text-align: center; position: relative; z-index: 1; }
     .step-num {
-      width: 80px; height: 80px;
+      width: 88px; height: 88px;
       border-radius: 50%;
-      background: var(--gold);
+      background: linear-gradient(160deg, var(--gold) 0%, var(--gold-dk) 100%);
       color: var(--black);
+      font-family: var(--font-display);
       font-size: 2rem;
       font-weight: 900;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-      box-shadow: 0 0 30px rgba(212,175,55,.4);
+      margin: 0 auto 24px;
+      box-shadow: 0 0 40px rgba(212,175,55,.25), 0 8px 32px rgba(0,0,0,.4);
+      position: relative;
     }
-    .step h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 10px;
+    .step-num::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,.15);
     }
-    .step p {
-      font-size: .9rem;
-      color: var(--gray-lt);
-      line-height: 1.6;
-    }
-    .steps-cta { text-align: center; margin-top: 48px; }
+    .step h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .step p { font-size: .88rem; color: var(--gray-lt); line-height: 1.7; font-weight: 300; }
+    .steps-cta { text-align: center; margin-top: 56px; }
 
-    /* ============================================
-       FAQ
-    ============================================ */
-    .faq-list { margin-top: 48px; max-width: 780px; margin-left: auto; margin-right: auto; }
+    .faq-list { margin-top: 56px; max-width: 780px; margin-left: auto; margin-right: auto; }
     .faq-item {
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
       overflow: hidden;
+      transition: border-color .3s;
     }
+    .faq-item:hover { border-color: rgba(212,175,55,.12); }
     .faq-question {
       width: 100%;
       background: var(--dark3);
       color: var(--white);
       border: none;
-      padding: 20px 24px;
+      padding: 22px 28px;
       text-align: left;
-      font-size: .97rem;
-      font-weight: 700;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      transition: background .2s;
+      gap: 16px;
+      transition: background .3s, color .3s;
     }
-    .faq-question:hover { background: #2a2a2a; }
-    .faq-question.active { background: #1e1a0a; color: var(--gold); }
-    .faq-arrow {
-      color: var(--gold);
-      font-size: .9rem;
-      transition: transform .3s;
-      flex-shrink: 0;
-    }
-    .faq-question.active .faq-arrow { transform: rotate(180deg); }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease, padding .4s ease;
-      background: var(--dark2);
-    }
+    .faq-question:hover { background: var(--dark4); }
+    .faq-question.active { background: rgba(212,175,55,.06); color: var(--gold); }
+    .faq-arrow { color: var(--gold); font-size: .8rem; transition: transform .4s cubic-bezier(.16,1,.3,1); flex-shrink: 0; opacity: .6; }
+    .faq-question.active .faq-arrow { transform: rotate(180deg); opacity: 1; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.16,1,.3,1); background: rgba(18,18,18,.8); }
     .faq-answer.open { max-height: 600px; }
-    .faq-answer-inner {
-      padding: 20px 24px;
-      font-size: .93rem;
-      color: var(--gray-lt);
-      line-height: 1.7;
-    }
+    .faq-answer-inner { padding: 20px 28px 24px; font-size: .9rem; color: var(--gray-lt); line-height: 1.75; font-weight: 300; }
 
-    /* ============================================
-       CTA FINAL
-    ============================================ */
     .cta-final {
-      background: linear-gradient(135deg, #0f0e05 0%, #1a1600 50%, #0a0a0a 100%);
-      border-top: 1px solid rgba(212,175,55,.15);
-      border-bottom: 1px solid rgba(212,175,55,.15);
-      padding: 100px 0;
+      background: var(--black);
+      border-top: 1px solid rgba(212,175,55,.08);
+      padding: 120px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -726,272 +593,163 @@
     .cta-final::before {
       content: '';
       position: absolute;
-      bottom: -100px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 300px;
-      background: radial-gradient(ellipse, rgba(212,175,55,.1) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse, rgba(212,175,55,.08) 0%, transparent 60%);
       pointer-events: none;
+    }
+    .cta-final::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,.2), transparent);
     }
     .urgency-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(220,53,69,.12);
-      border: 1px solid rgba(220,53,69,.3);
+      background: rgba(220,53,69,.08);
+      border: 1px solid rgba(220,53,69,.2);
       color: #ff6b7a;
-      font-size: .8rem;
+      font-size: .75rem;
       font-weight: 700;
-      padding: 7px 16px;
-      border-radius: 50px;
-      margin-bottom: 28px;
-      letter-spacing: .06em;
+      padding: 8px 20px;
+      border-radius: 60px;
+      margin-bottom: 32px;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
     .cta-final h2 {
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
     }
-    .cta-final p {
-      font-size: 1.05rem;
-      color: var(--gray-lt);
-      max-width: 560px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-    .cta-final .guarantee {
-      margin-top: 28px;
-      font-size: .85rem;
-      color: var(--gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+    .cta-final p { font-size: 1.02rem; color: var(--gray-lt); max-width: 520px; margin: 0 auto 44px; line-height: 1.75; font-weight: 300; }
+    .cta-final .guarantee { margin-top: 32px; font-size: .82rem; color: var(--gray); display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 500; }
     .cta-final .guarantee i { color: var(--gold); }
 
-    /* ============================================
-       FOOTER
-    ============================================ */
     footer {
       background: var(--black);
-      border-top: 1px solid rgba(255,255,255,.06);
-      padding: 40px 0 24px;
+      border-top: 1px solid rgba(255,255,255,.04);
+      padding: 48px 0 28px;
       text-align: center;
     }
-    .footer-logo {
-      font-size: 1.2rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
+    .footer-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; margin-bottom: 16px; }
     .footer-logo span { color: var(--gold); }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      font-size: .88rem;
-      color: var(--gray);
-      transition: color .2s;
-    }
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: .85rem; color: var(--gray); transition: color .3s; font-weight: 500; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: .8rem; color: var(--gray); }
+    .footer-copy { font-size: .78rem; color: var(--gray); font-weight: 300; }
     .footer-copy span { color: var(--gold); }
 
-    /* ============================================
-       RESPONSIVIDADE
-    ============================================ */
+    .section-sep { height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,.12), transparent); }
+
     @media(max-width:768px) {
-      .section { padding: 60px 0; }
+      .section { padding: 72px 0; }
       nav .btn-wa { display: none; }
     }
     @media(max-width:480px) {
-      .btn-wa-lg { font-size: 1rem; padding: 16px 28px; }
+      .btn-wa-lg { font-size: .95rem; padding: 18px 32px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- TOPBAR -->
   <div class="topbar">
     ⚡ VAGAS LIMITADAS PARA JUNHO — <a href="https://wa.me/5511997612100" target="_blank">Garanta a sua agora</a>
   </div>
 
-  <!-- NAVBAR -->
   <nav>
     <div class="container nav-inner">
       <div class="nav-logo">FABIO DIAS <span>PERSONAL</span></div>
-      <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa" style="padding:12px 24px;font-size:.88rem;">
+      <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa" style="padding:12px 28px;font-size:.85rem;">
         <i class="fab fa-whatsapp"></i> Falar agora
       </a>
     </div>
   </nav>
 
-  <!-- ==========================================
-       HERO SECTION
-  =========================================== -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
-
         <div class="fade-in">
           <div class="hero-badge">
             <i class="fas fa-fire"></i> Protocolo 40tando — Método Exclusivo 35+
           </div>
-          <h1>
-            Cansado de tentar e a barriga <span class="gold">não sair?</span>
-          </h1>
-          <p class="hero-sub">
-            Existe um método feito especificamente para quem tem mais de 35 anos. Ele respeita o seu metabolismo atual e gera resultados reais — sem dietas absurdas, sem academia todos os dias.
-          </p>
-
+          <h1>Cansado de tentar e a barriga <span class="gold">não sair?</span></h1>
+          <p class="hero-sub">Existe um método feito especificamente para quem tem mais de 35 anos. Ele respeita o seu metabolismo atual e gera resultados reais — sem dietas absurdas, sem academia todos os dias.</p>
           <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
             <i class="fab fa-whatsapp"></i> Quero conhecer o Protocolo 40tando
           </a>
-
           <div class="hero-social-proof">
-            <div>
-              <div class="proof-stars">★★★★★</div>
-            </div>
-            <div class="proof-text">
-              <strong>+1.000 alunos</strong> transformados em Santo André e região
-            </div>
+            <div><div class="proof-stars">★★★★★</div></div>
+            <div class="proof-text"><strong>+1.000 alunos</strong> transformados em Santo André e região</div>
           </div>
         </div>
-
         <div class="hero-img-wrap fade-in fade-in-delay-2">
           <div class="hero-img-ring">
             <div class="hero-img-inner">
-              <img
-                src="https://instagram.fcgh3-1.fna.fbcdn.net/v/t51.82787-19/630400051_18553890016012452_6544093617287833672_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFK4yhGv28iw1iMJpC-VXFfOZ4YFFQyjU0zWhKdpd1EkrAhiE3e7NPAPmQyrxnUiIsoBkc92HOZPWH5CgGwPBLl&_nc_ohc=aTxDQT4icHMQ7kNvwFmZOvi&_nc_gid=QzbunS6knLUxUqgHKmbLaQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af0pW4bVcWSBGPR8B6wPWZrEs5c-3sVjktLMEE5R235qeg&oe=69DAD686&_nc_sid=22de04"
-                alt="Fabio Dias Personal Trainer"
-                loading="eager"
-              />
+              <img src="https://instagram.fcgh3-1.fna.fbcdn.net/v/t51.82787-19/630400051_18553890016012452_6544093617287833672_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFK4yhGv28iw1iMJpC-VXFfOZ4YFFQyjU0zWhKdpd1EkrAhiE3e7NPAPmQyrxnUiIsoBkc92HOZPWH5CgGwPBLl&_nc_ohc=aTxDQT4icHMQ7kNvwFmZOvi&_nc_gid=QzbunS6knLUxUqgHKmbLaQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af0pW4bVcWSBGPR8B6wPWZrEs5c-3sVjktLMEE5R235qeg&oe=69DAD686&_nc_sid=22de04" alt="Fabio Dias Personal Trainer" loading="eager" />
             </div>
           </div>
           <div class="hero-badge-float">🏆 +1.000 alunos</div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- PROOF BAR -->
   <div class="proof-bar">
     <div class="container">
       <div class="proof-bar-inner">
-        <div class="proof-item fade-in">
-          <i class="fas fa-users"></i>
-          <span>+1.000 alunos transformados</span>
-        </div>
-        <div class="proof-item fade-in fade-in-delay-1">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Santo André, SP</span>
-        </div>
-        <div class="proof-item fade-in fade-in-delay-2">
-          <i class="fab fa-instagram"></i>
-          <span>@fabiodiaspersonal</span>
-        </div>
-        <div class="proof-item fade-in fade-in-delay-3">
-          <i class="fas fa-medal"></i>
-          <span>Especialista 35+</span>
-        </div>
+        <div class="proof-item fade-in"><i class="fas fa-users"></i><span>+1.000 alunos transformados</span></div>
+        <div class="proof-item fade-in fade-in-delay-1"><i class="fas fa-map-marker-alt"></i><span>Santo André, SP</span></div>
+        <div class="proof-item fade-in fade-in-delay-2"><i class="fab fa-instagram"></i><span>@fabiodiaspersonal</span></div>
+        <div class="proof-item fade-in fade-in-delay-3"><i class="fas fa-medal"></i><span>Especialista 35+</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ==========================================
-       DOR SECTION
-  =========================================== -->
   <section class="section section-dark">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">VOCÊ SE IDENTIFICA COM ISSO?</p>
-        <h2 class="section-title">
-          Depois dos 35, o corpo <span class="gold">muda tudo</span>.<br/>E o que funcionava antes, <span class="gold">não funciona mais.</span>
-        </h2>
+        <div class="section-label">VOCÊ SE IDENTIFICA COM ISSO?</div>
+        <h2 class="section-title">Depois dos 35, o corpo <span class="gold">muda tudo</span>.<br/>E o que funcionava antes, <span class="gold">não funciona mais.</span></h2>
         <div class="divider"></div>
-        <p class="section-sub">
-          Não é falta de força de vontade. É que ninguém te ensinou a treinar do jeito certo para a fase da vida em que você está.
-        </p>
+        <p class="section-sub">Não é falta de força de vontade. É que ninguém te ensinou a treinar do jeito certo para a fase da vida em que você está.</p>
       </div>
-
       <div class="dor-grid">
-        <div class="dor-card fade-in">
-          <div class="icon">🐢</div>
-          <h3>Metabolismo mais lento</h3>
-          <p>Você come a mesma coisa de antes e engorda mais. O corpo não responde igual — e você precisa de um método adaptado a isso.</p>
-        </div>
-        <div class="dor-card fade-in fade-in-delay-1">
-          <div class="icon">⏰</div>
-          <h3>Falta de tempo e energia</h3>
-          <p>Trabalho, família, compromissos. No fim do dia você já está esgotado. Treinar 2 horas por dia é impossível — e não precisa ser assim.</p>
-        </div>
-        <div class="dor-card fade-in fade-in-delay-2">
-          <div class="icon">😤</div>
-          <h3>Já tentou de tudo e não deu resultado</h3>
-          <p>Dietas genéricas, apps de treino, academia sem orientação. Tudo começa, nada continua. E a barriga teimosa fica do mesmo jeito.</p>
-        </div>
-        <div class="dor-card fade-in fade-in-delay-3">
-          <div class="icon">📉</div>
-          <h3>Perda de massa muscular</h3>
-          <p>Depois dos 35, o corpo perde músculo naturalmente. Sem o estímulo certo, você fica mais flácido — mesmo que o número na balança não mude.</p>
-        </div>
+        <div class="dor-card fade-in"><div class="icon">🐢</div><h3>Metabolismo mais lento</h3><p>Você come a mesma coisa de antes e engorda mais. O corpo não responde igual — e você precisa de um método adaptado a isso.</p></div>
+        <div class="dor-card fade-in fade-in-delay-1"><div class="icon">⏰</div><h3>Falta de tempo e energia</h3><p>Trabalho, família, compromissos. No fim do dia você já está esgotado. Treinar 2 horas por dia é impossível — e não precisa ser assim.</p></div>
+        <div class="dor-card fade-in fade-in-delay-2"><div class="icon">😤</div><h3>Já tentou de tudo e não deu resultado</h3><p>Dietas genéricas, apps de treino, academia sem orientação. Tudo começa, nada continua. E a barriga teimosa fica do mesmo jeito.</p></div>
+        <div class="dor-card fade-in fade-in-delay-3"><div class="icon">📉</div><h3>Perda de massa muscular</h3><p>Depois dos 35, o corpo perde músculo naturalmente. Sem o estímulo certo, você fica mais flácido — mesmo que o número na balança não mude.</p></div>
       </div>
-
       <div class="dor-cta fade-in">
-        <p style="color:var(--gray-lt);margin-bottom:24px;font-size:1rem;">Se você se identificou com pelo menos uma situação acima, o Protocolo 40tando foi feito para você.</p>
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa">
-          <i class="fab fa-whatsapp"></i> Quero mudar isso agora
-        </a>
+        <p style="color:var(--gray-lt);margin-bottom:24px;font-size:1rem;font-weight:300;">Se você se identificou com pelo menos uma situação acima, o Protocolo 40tando foi feito para você.</p>
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Quero mudar isso agora</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       MÉTODO PROTOCOLO 40TANDO
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark2">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">A SOLUÇÃO</p>
-        <h2 class="section-title">
-          Conheça o <span class="gold">Protocolo 40tando</span>
-        </h2>
+        <div class="section-label">A SOLUÇÃO</div>
+        <h2 class="section-title">Conheça o <span class="gold">Protocolo 40tando</span></h2>
         <div class="divider"></div>
-        <p class="section-sub">
-          Um método desenvolvido especificamente para quem tem 35+ e quer resultados reais sem perder tempo, sem se machucar e sem abrir mão da vida social.
-        </p>
+        <p class="section-sub">Um método desenvolvido especificamente para quem tem 35+ e quer resultados reais sem perder tempo, sem se machucar e sem abrir mão da vida social.</p>
       </div>
-
       <div class="metodo-grid">
-        <div class="metodo-card fade-in">
-          <div class="num">1</div>
-          <h3>Avaliação Completa</h3>
-          <p>Começamos entendendo seu corpo, sua rotina e seus objetivos. Nada genérico — tudo personalizado do zero para a sua realidade.</p>
-        </div>
-        <div class="metodo-card fade-in fade-in-delay-1">
-          <div class="num">2</div>
-          <h3>Treino Inteligente 35+</h3>
-          <p>Protocolos de treino que respeitam as articulações, maximizam a queima de gordura e estimulam o ganho muscular no tempo certo.</p>
-        </div>
-        <div class="metodo-card fade-in fade-in-delay-2">
-          <div class="num">3</div>
-          <h3>Nutrição Sem Sofrimento</h3>
-          <p>Orientação alimentar realista. Sem dietas da moda. Você aprende a comer bem sem deixar de aproveitar a vida.</p>
-        </div>
-        <div class="metodo-card fade-in fade-in-delay-3">
-          <div class="num">4</div>
-          <h3>Acompanhamento Contínuo</h3>
-          <p>Você não fica sozinho. Ajustamos o protocolo conforme sua evolução e o Fabio está disponível para tirar suas dúvidas.</p>
-        </div>
+        <div class="metodo-card fade-in"><div class="num">1</div><h3>Avaliação Completa</h3><p>Começamos entendendo seu corpo, sua rotina e seus objetivos. Nada genérico — tudo personalizado do zero para a sua realidade.</p></div>
+        <div class="metodo-card fade-in fade-in-delay-1"><div class="num">2</div><h3>Treino Inteligente 35+</h3><p>Protocolos de treino que respeitam as articulações, maximizam a queima de gordura e estimulam o ganho muscular no tempo certo.</p></div>
+        <div class="metodo-card fade-in fade-in-delay-2"><div class="num">3</div><h3>Nutrição Sem Sofrimento</h3><p>Orientação alimentar realista. Sem dietas da moda. Você aprende a comer bem sem deixar de aproveitar a vida.</p></div>
+        <div class="metodo-card fade-in fade-in-delay-3"><div class="num">4</div><h3>Acompanhamento Contínuo</h3><p>Você não fica sozinho. Ajustamos o protocolo conforme sua evolução e o Fabio está disponível para tirar suas dúvidas.</p></div>
       </div>
-
       <div class="metodo-diff fade-in">
         <h3>Por que é diferente da academia convencional?</h3>
         <ul class="diff-list">
@@ -1003,179 +761,92 @@
           <li><i class="fas fa-check-circle"></i> Personal exclusivo — não divide atenção com 50 pessoas</li>
         </ul>
       </div>
-
-      <div style="margin-top:40px;" class="fade-in">
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
-          <i class="fab fa-whatsapp"></i> Quero iniciar o Protocolo 40tando
-        </a>
+      <div style="margin-top:48px;" class="fade-in">
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg"><i class="fab fa-whatsapp"></i> Quero iniciar o Protocolo 40tando</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       RESULTADOS DOS ALUNOS
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">PROVA REAL</p>
-        <h2 class="section-title">
-          +1.000 histórias de <span class="gold">transformação</span>
-        </h2>
+        <div class="section-label">PROVA REAL</div>
+        <h2 class="section-title">+1.000 histórias de <span class="gold">transformação</span></h2>
         <div class="divider"></div>
         <p class="section-sub">Resultados reais de alunos reais. Pessoas como você que decidiram mudar e seguiram o Protocolo 40tando.</p>
       </div>
-
       <div class="results-grid">
-
-        <!-- Card 1 -->
         <div class="result-card fade-in">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Carlos M.</div>
-            <div class="result-meta">42 anos · Perdeu 14kg e ganhou massa em 3 meses</div>
-            <p class="result-quote">"Tentei emagrecer por 5 anos. Em 3 meses com o Fabio fiz o que nunca consegui. Minha esposa não acreditou quando me viu."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Carlos M.</div><div class="result-meta">42 anos · Perdeu 14kg e ganhou massa em 3 meses</div><p class="result-quote">"Tentei emagrecer por 5 anos. Em 3 meses com o Fabio fiz o que nunca consegui. Minha esposa não acreditou quando me viu."</p></div>
         </div>
-
-        <!-- Card 2 -->
         <div class="result-card fade-in fade-in-delay-1">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Ana Paula S.</div>
-            <div class="result-meta">38 anos · Eliminou 10kg e definiu o abdômen em 60 dias</div>
-            <p class="result-quote">"Nunca pensei que ia conseguir definir depois dos 35. O método do Fabio é diferente de tudo que já tentei. Me sinto mais jovem do que aos 28."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Ana Paula S.</div><div class="result-meta">38 anos · Eliminou 10kg e definiu o abdômen em 60 dias</div><p class="result-quote">"Nunca pensei que ia conseguir definir depois dos 35. O método do Fabio é diferente de tudo que já tentei. Me sinto mais jovem do que aos 28."</p></div>
         </div>
-
-        <!-- Card 3 -->
         <div class="result-card fade-in fade-in-delay-2">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Roberto T.</div>
-            <div class="result-meta">47 anos · Reduziu 18cm na cintura em 4 meses</div>
-            <p class="result-quote">"Tinha 47 anos e achei que meu tempo tinha passado. O Fabio me provou que não. Voltei a usar roupa que usava há 10 anos."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Roberto A.</div><div class="result-meta">47 anos · Reduziu 18cm na cintura em 4 meses</div><p class="result-quote">"Tinha 47 anos e achei que meu tempo tinha passado. O Fabio me provou que não. Voltei a usar roupa que usava há 10 anos."</p></div>
         </div>
-
-        <!-- Card 4 -->
         <div class="result-card fade-in">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Fernanda L.</div>
-            <div class="result-meta">41 anos · Perdeu 12kg sem perder massa muscular</div>
-            <p class="result-quote">"O que mais me impressionou foi manter o músculo enquanto emagrecia. Nunca tinha conseguido isso antes. O protocolo é incrível."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Fernanda L.</div><div class="result-meta">41 anos · Perdeu 12kg sem perder massa muscular</div><p class="result-quote">"O que mais me impressionou foi manter o músculo enquanto emagrecia. Nunca tinha conseguido isso antes. O protocolo é incrível."</p></div>
         </div>
-
-        <!-- Card 5 -->
         <div class="result-card fade-in fade-in-delay-1">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Marcelo F.</div>
-            <div class="result-meta">44 anos · Ganhou 6kg de massa e reduziu gordura em 90 dias</div>
-            <p class="result-quote">"Achei que seria difícil conciliar com o trabalho e a família. O Fabio adaptou tudo à minha rotina. Hoje treino 3x por semana e os resultados são absurdos."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Marcelo F.</div><div class="result-meta">44 anos · Ganhou 6kg de massa e reduziu gordura em 90 dias</div><p class="result-quote">"Achei que seria difícil conciliar com o trabalho e a família. O Fabio adaptou tudo à minha rotina. Hoje treino 3x por semana e os resultados são absurdos."</p></div>
         </div>
-
-        <!-- Card 6 -->
         <div class="result-card fade-in fade-in-delay-2">
-          <div class="result-photos">
-            <div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div>
-            <div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div>
-          </div>
-          <div class="result-body">
-            <div class="result-name">Juliana R.</div>
-            <div class="result-meta">36 anos · Transformação completa em 5 meses</div>
-            <p class="result-quote">"Sempre tive dificuldade com a barriga mesmo sendo magra no restante do corpo. O Fabio entendeu exatamente o que eu precisava. Resultado inacreditável."</p>
-          </div>
+          <div class="result-photos"><div class="photo-placeholder antes"><i class="fas fa-user"></i> Antes</div><div class="photo-placeholder depois"><i class="fas fa-user"></i> Depois</div></div>
+          <div class="result-body"><div class="result-name">Juliana R.</div><div class="result-meta">36 anos · Transformação completa em 5 meses</div><p class="result-quote">"Sempre tive dificuldade com a barriga mesmo sendo magra no restante do corpo. O Fabio entendeu exatamente o que eu precisava. Resultado inacreditável."</p></div>
         </div>
-
       </div>
-
-      <div style="margin-top:48px;" class="fade-in">
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
-          <i class="fab fa-whatsapp"></i> Quero ser o próximo resultado
-        </a>
+      <div style="margin-top:56px;" class="fade-in">
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg"><i class="fab fa-whatsapp"></i> Quero ser o próximo resultado</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       SOBRE O FABIO
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark2">
     <div class="container">
       <div class="sobre-grid">
-
         <div class="sobre-img-wrap fade-in">
           <div class="sobre-img">
-            <img
-              src="https://instagram.fcgh3-1.fna.fbcdn.net/v/t51.82787-19/630400051_18553890016012452_6544093617287833672_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFK4yhGv28iw1iMJpC-VXFfOZ4YFFQyjU0zWhKdpd1EkrAhiE3e7NPAPmQyrxnUiIsoBkc92HOZPWH5CgGwPBLl&_nc_ohc=aTxDQT4icHMQ7kNvwFmZOvi&_nc_gid=QzbunS6knLUxUqgHKmbLaQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af0pW4bVcWSBGPR8B6wPWZrEs5c-3sVjktLMEE5R235qeg&oe=69DAD686&_nc_sid=22de04"
-              alt="Fabio Dias — Personal Trainer especializado em 35+"
-            />
+            <img src="https://instagram.fcgh3-1.fna.fbcdn.net/v/t51.82787-19/630400051_18553890016012452_6544093617287833672_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh3-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2gFK4yhGv28iw1iMJpC-VXFfOZ4YFFQyjU0zWhKdpd1EkrAhiE3e7NPAPmQyrxnUiIsoBkc92HOZPWH5CgGwPBLl&_nc_ohc=aTxDQT4icHMQ7kNvwFmZOvi&_nc_gid=QzbunS6knLUxUqgHKmbLaQ&edm=APoiHPcBAAAA&ccb=7-5&oh=00_Af0pW4bVcWSBGPR8B6wPWZrEs5c-3sVjktLMEE5R235qeg&oe=69DAD686&_nc_sid=22de04" alt="Fabio Dias — Personal Trainer especializado em 35+" />
           </div>
         </div>
-
         <div class="sobre-content fade-in fade-in-delay-1">
-          <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">QUEM É O FABIO</p>
+          <div class="section-label" style="margin-bottom:16px;">QUEM É O FABIO</div>
           <h2>O personal que <span class="gold">entende o seu momento</span> de vida</h2>
           <p>Fabio Dias é personal trainer especializado em pessoas acima de 35 anos. Ele entende, na prática, que o corpo depois dos 35 exige uma abordagem diferente — e desenvolveu o Protocolo 40tando justamente para isso.</p>
           <p>Com mais de uma década de experiência e mais de 1.000 alunos transformados em Santo André e região, Fabio combina ciência do exercício, nutrição aplicada e acompanhamento próximo para gerar resultados que durem de verdade.</p>
           <p>O diferencial do Fabio não é só o método — é o cuidado com cada aluno. Ele não trabalha com turmas lotadas. Ele conhece sua história, sua rotina e seus objetivos, e ajusta o protocolo conforme você evolui.</p>
-
           <div class="sobre-stats">
-            <div class="stat-item">
-              <div class="stat-num">+1.000</div>
-              <div class="stat-label">Alunos transformados</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">10+</div>
-              <div class="stat-label">Anos de experiência</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">100%</div>
-              <div class="stat-label">Foco em 35+</div>
-            </div>
+            <div class="stat-item"><div class="stat-num">+1.000</div><div class="stat-label">Alunos transformados</div></div>
+            <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Anos de experiência</div></div>
+            <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Foco em 35+</div></div>
           </div>
-
-          <div style="margin-top:32px;">
-            <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa">
-              <i class="fab fa-whatsapp"></i> Falar com o Fabio agora
-            </a>
+          <div style="margin-top:36px;">
+            <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Falar com o Fabio agora</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       PARA QUEM É / NÃO É
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark3">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">SEJA HONESTO</p>
+        <div class="section-label">SEJA HONESTO</div>
         <h2 class="section-title">O Protocolo 40tando <span class="gold">é para você?</span></h2>
         <div class="divider"></div>
       </div>
-
       <div class="pq-grid">
         <div class="pq-card sim fade-in">
           <h3><i class="fas fa-check-circle"></i> É para você se...</h3>
@@ -1189,7 +860,6 @@
             <li><i class="fas fa-check"></i> Mora ou trabalha em Santo André e região</li>
           </ul>
         </div>
-
         <div class="pq-card nao fade-in fade-in-delay-1">
           <h3><i class="fas fa-times-circle"></i> Não é para você se...</h3>
           <ul class="pq-list">
@@ -1201,177 +871,70 @@
           </ul>
         </div>
       </div>
-
-      <div style="margin-top:40px;" class="fade-in">
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
-          <i class="fab fa-whatsapp"></i> Sou o perfil ideal — quero começar
-        </a>
+      <div style="margin-top:48px;" class="fade-in">
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg"><i class="fab fa-whatsapp"></i> Sou o perfil ideal — quero começar</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       COMO FUNCIONA
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">SIMPLES ASSIM</p>
+        <div class="section-label">SIMPLES ASSIM</div>
         <h2 class="section-title">Como funciona o seu início</h2>
         <div class="divider"></div>
         <p class="section-sub">Em 3 passos simples você já está dentro do Protocolo 40tando e começando a transformação.</p>
       </div>
-
       <div class="steps-grid">
-        <div class="step fade-in">
-          <div class="step-num">1</div>
-          <h3>Chame no WhatsApp</h3>
-          <p>Manda uma mensagem para o Fabio agora. Sem compromisso. Ele vai entender o seu caso e responder pessoalmente.</p>
-        </div>
-        <div class="step fade-in fade-in-delay-1">
-          <div class="step-num">2</div>
-          <h3>Avaliação Gratuita</h3>
-          <p>Você passa por uma avaliação completa e gratuita. O Fabio entende sua situação, objetivos e monta um plano personalizado para você.</p>
-        </div>
-        <div class="step fade-in fade-in-delay-2">
-          <div class="step-num">3</div>
-          <h3>Início do Protocolo</h3>
-          <p>Com o plano em mãos, você começa o Protocolo 40tando do jeito certo, com acompanhamento próximo desde o primeiro dia.</p>
-        </div>
+        <div class="step fade-in"><div class="step-num">1</div><h3>Chame no WhatsApp</h3><p>Manda uma mensagem para o Fabio agora. Sem compromisso. Ele vai entender o seu caso e responder pessoalmente.</p></div>
+        <div class="step fade-in fade-in-delay-1"><div class="step-num">2</div><h3>Avaliação Gratuita</h3><p>Você passa por uma avaliação completa e gratuita. O Fabio entende sua situação, objetivos e monta um plano personalizado para você.</p></div>
+        <div class="step fade-in fade-in-delay-2"><div class="step-num">3</div><h3>Início do Protocolo</h3><p>Com o plano em mãos, você começa o Protocolo 40tando do jeito certo, com acompanhamento próximo desde o primeiro dia.</p></div>
       </div>
-
       <div class="steps-cta fade-in">
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
-          <i class="fab fa-whatsapp"></i> Dar o primeiro passo agora
-        </a>
-        <p style="margin-top:16px;font-size:.85rem;color:var(--gray);">A avaliação é gratuita e sem compromisso.</p>
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg"><i class="fab fa-whatsapp"></i> Dar o primeiro passo agora</a>
+        <p style="margin-top:18px;font-size:.82rem;color:var(--gray);font-weight:300;">A avaliação é gratuita e sem compromisso.</p>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       FAQ
-  =========================================== -->
+  <div class="section-sep"></div>
+
   <section class="section section-dark2">
     <div class="container center">
       <div class="fade-in">
-        <p style="color:var(--gold);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">DÚVIDAS FREQUENTES</p>
+        <div class="section-label">DÚVIDAS FREQUENTES</div>
         <h2 class="section-title">Sua pergunta pode estar <span class="gold">aqui</span></h2>
         <div class="divider"></div>
       </div>
-
       <div class="faq-list">
-
-        <div class="faq-item fade-in">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Preciso ter experiência com academia para começar?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Não precisa de nenhuma experiência. O Protocolo 40tando começa do zero, do jeito certo para o seu corpo e para o seu nível atual. Muitos dos nossos alunos nunca tinham pisado numa academia antes de começar com o Fabio — e conseguiram resultados incríveis.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in fade-in-delay-1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Quantos dias por semana precisarei treinar?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              O protocolo é projetado para funcionar com 3 a 4 treinos por semana, de 45 a 60 minutos cada. Sabemos que você tem vida, trabalho e família — por isso o método foi desenhado para encaixar na sua rotina real, não o contrário.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in fade-in-delay-2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Em quanto tempo vou ver resultado?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              A maioria dos alunos começa a perceber diferença nas primeiras 3 a 4 semanas — mais disposição, roupas mais largas, barriga diminuindo. Resultados mais expressivos aparecem entre 60 e 90 dias de protocolo seguido corretamente.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Tenho problemas de saúde. Posso fazer?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              O Fabio é especializado em adaptação. Hipertensão, colesterol alto, problemas nas articulações, histórico de lesão — tudo é levado em conta na avaliação. O protocolo é montado para o seu corpo e suas limitações específicas. Mande mensagem e conte sua situação — a avaliação é gratuita.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in fade-in-delay-1">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Funciona para quem quer ganhar músculo, não só emagrecer?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Sim. O Protocolo 40tando trabalha simultaneamente a queima de gordura e o ganho de massa muscular — que é o grande diferencial para quem tem mais de 35 anos. Você não precisa escolher entre um ou outro. O método é feito para os dois objetivos ao mesmo tempo.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item fade-in fade-in-delay-2">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Qual é o investimento para trabalhar com o Fabio?
-            <i class="fas fa-chevron-down faq-arrow"></i>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Os planos variam conforme o formato de acompanhamento escolhido. A avaliação inicial é gratuita — e é durante ela que o Fabio apresenta as opções disponíveis e ajuda você a escolher o que melhor se encaixa na sua realidade. Mande uma mensagem agora e agende a sua.
-            </div>
-          </div>
-        </div>
-
+        <div class="faq-item fade-in"><button class="faq-question" onclick="toggleFaq(this)">Preciso ter experiência com academia para começar?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">Não precisa de nenhuma experiência. O Protocolo 40tando começa do zero, do jeito certo para o seu corpo e para o seu nível atual. Muitos dos nossos alunos nunca tinham pisado numa academia antes de começar com o Fabio — e conseguiram resultados incríveis.</div></div></div>
+        <div class="faq-item fade-in fade-in-delay-1"><button class="faq-question" onclick="toggleFaq(this)">Quantos dias por semana precisarei treinar?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">O protocolo é projetado para funcionar com 3 a 4 treinos por semana, de 45 a 60 minutos cada. Sabemos que você tem vida, trabalho e família — por isso o método foi desenhado para encaixar na sua rotina real, não o contrário.</div></div></div>
+        <div class="faq-item fade-in fade-in-delay-2"><button class="faq-question" onclick="toggleFaq(this)">Em quanto tempo vou ver resultado?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">A maioria dos alunos começa a perceber diferença nas primeiras 3 a 4 semanas — mais disposição, roupas mais largas, barriga diminuindo. Resultados mais expressivos aparecem entre 60 e 90 dias de protocolo seguido corretamente.</div></div></div>
+        <div class="faq-item fade-in"><button class="faq-question" onclick="toggleFaq(this)">Tenho problemas de saúde. Posso fazer?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">O Fabio é especializado em adaptação. Hipertensão, colesterol alto, problemas nas articulações, histórico de lesão — tudo é levado em conta na avaliação. O protocolo é montado para o seu corpo e suas limitações específicas. Mande mensagem e conte sua situação — a avaliação é gratuita.</div></div></div>
+        <div class="faq-item fade-in fade-in-delay-1"><button class="faq-question" onclick="toggleFaq(this)">Funciona para quem quer ganhar músculo, não só emagrecer?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">Sim. O Protocolo 40tando trabalha simultaneamente a queima de gordura e o ganho de massa muscular — que é o grande diferencial para quem tem mais de 35 anos. Você não precisa escolher entre um ou outro. O método é feito para os dois objetivos ao mesmo tempo.</div></div></div>
+        <div class="faq-item fade-in fade-in-delay-2"><button class="faq-question" onclick="toggleFaq(this)">Qual é o investimento para trabalhar com o Fabio?<i class="fas fa-chevron-down faq-arrow"></i></button><div class="faq-answer"><div class="faq-answer-inner">Os planos variam conforme o formato de acompanhamento escolhido. A avaliação inicial é gratuita — e é durante ela que o Fabio apresenta as opções disponíveis e ajuda você a escolher o que melhor se encaixa na sua realidade. Mande uma mensagem agora e agende a sua.</div></div></div>
       </div>
-
-      <div style="margin-top:40px;" class="fade-in">
-        <p style="color:var(--gray-lt);margin-bottom:20px;">Ainda tem dúvidas? Manda mensagem direto pro Fabio.</p>
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa">
-          <i class="fab fa-whatsapp"></i> Tirar minha dúvida agora
-        </a>
+      <div style="margin-top:48px;" class="fade-in">
+        <p style="color:var(--gray-lt);margin-bottom:20px;font-weight:300;">Ainda tem dúvidas? Manda mensagem direto pro Fabio.</p>
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Tirar minha dúvida agora</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       CTA FINAL
-  =========================================== -->
   <section class="cta-final">
     <div class="container">
-      <div class="urgency-badge fade-in">
-        <i class="fas fa-fire"></i> Vagas limitadas para junho/2026
-      </div>
-      <h2 class="fade-in">
-        Chega de adiar.<br/>Seu corpo está esperando <span class="gold">desde os 35.</span>
-      </h2>
-      <p class="fade-in fade-in-delay-1">
-        Você já sabe o que não funciona. Já tentou de outras formas. Agora é a hora de tentar do jeito certo — com um método feito especificamente para o seu momento de vida.
-      </p>
+      <div class="urgency-badge fade-in"><i class="fas fa-fire"></i> Vagas limitadas para junho/2026</div>
+      <h2 class="fade-in">Chega de adiar.<br/>Seu corpo está esperando <span class="gold">desde os 35.</span></h2>
+      <p class="fade-in fade-in-delay-1">Você já sabe o que não funciona. Já tentou de outras formas. Agora é a hora de tentar do jeito certo — com um método feito especificamente para o seu momento de vida.</p>
       <div class="fade-in fade-in-delay-2">
-        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg">
-          <i class="fab fa-whatsapp"></i> Garantir minha vaga no Protocolo 40tando
-        </a>
+        <a href="https://wa.me/5511997612100" target="_blank" class="btn-wa btn-wa-lg"><i class="fab fa-whatsapp"></i> Garantir minha vaga no Protocolo 40tando</a>
       </div>
-      <div class="guarantee fade-in fade-in-delay-3">
-        <i class="fas fa-shield-alt"></i>
-        Avaliação 100% gratuita e sem compromisso
-      </div>
+      <div class="guarantee fade-in fade-in-delay-3"><i class="fas fa-shield-alt"></i> Avaliação 100% gratuita e sem compromisso</div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-logo">FABIO DIAS <span>PERSONAL</span></div>
@@ -1379,50 +942,29 @@
         <a href="https://wa.me/5511997612100" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="https://instagram.com/fabiodiaspersonal" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
-      <p class="footer-copy">
-        © 2026 Fabio Dias Personal Trainer · Santo André, SP · <span>@fabiodiaspersonal</span>
-      </p>
+      <p class="footer-copy">© 2026 Fabio Dias Personal Trainer · Santo André, SP · <span>@fabiodiaspersonal</span></p>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/5511997612100" target="_blank" class="wa-float" title="Falar no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <a href="https://wa.me/5511997612100" target="_blank" class="wa-float" title="Falar no WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-  <!-- ============================================
-       JAVASCRIPT
-  ============================================ -->
   <script>
-    /* ---------- Scroll fade-in ---------- */
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
 
-    /* ---------- FAQ Accordion ---------- */
     function toggleFaq(btn) {
       const answer = btn.nextElementSibling;
       const isOpen = answer.classList.contains('open');
-
-      // Fecha todos
       document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
       document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('active'));
-
-      // Abre o clicado (se estava fechado)
-      if (!isOpen) {
-        answer.classList.add('open');
-        btn.classList.add('active');
-      }
+      if (!isOpen) { answer.classList.add('open'); btn.classList.add('active'); }
     }
 
-    /* ---------- Smooth nav links ---------- */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -1430,6 +972,11 @@
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.5)' : 'none';
+    }, { passive: true });
   </script>
 
 </body>
